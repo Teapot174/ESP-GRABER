@@ -50,7 +50,7 @@ ESP-GRABER — универсальный инструмент для работ
 |Module|Pin 1|Pin 2|Pin 3|Pin 4|Pin 5|Pin 6| Pin 7|
 |--------|--------|--------|--------|--------|--------|--------|--------|
 |**📺 Display**|VCC → 3V3|GND → GND|SCL → G22|SDA → G21|-|-|-|
-|**🔘 Buttons**|K1 → G27|K2 → G26|K3 → G33|K4 → G32|-|-|-|
+|**🔘 Buttons**|UP(K1) → G27|DOWN(K2) → G26|OK(K3) → G33|BACK(K4) → G32|-|-|-|
 |**📡 CC1101**|1 → GND|2 → 3V3|3 → G2|4 → G5|5 → G18|6 → G23 |7 → G19|
 
 ### 📸 Финальный результат (YouTube)
@@ -102,7 +102,7 @@ By using the firmware, you must comply with the laws of your region. The firmwar
 |Module|Pin 1|Pin 2|Pin 3|Pin 4|Pin 5|Pin 6| Pin 7|
 |--------|--------|--------|--------|--------|--------|--------|--------|
 |**📺 Display**|VCC → 3V3|GND → GND|SCL → G22|SDA → G21|-|-|-|
-|**🔘 Buttons**|K1 → G27|K2 → G26|K3 → G33|K4 → G32|-|-|-|
+|**🔘 Buttons**|UP(K1) → G27|DOWN(K2) → G26|OK(K3) → G33|BACK(K4) → G32|-|-|-|
 |**📡 CC1101**|1 → GND|2 → 3V3|3 → G2|4 → G5|5 → G18|6 → G23 |7 → G19|
 
 ### 📸 Final Result (YouTube)

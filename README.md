@@ -46,7 +46,7 @@ ESP-GRABER — универсальный инструмент для работ
 | Провода-перемычки | [AliExpress](https://aliexpress.ru/item/1005007553381854.html) |
 
 ### 🔌 Схема подключения
-![Схема](https://github.com/user-attachments/assets/cda54f27-3c40-4c8f-980a-df7c30e4257f)
+![Схема](https://github.com/user-attachments/assets/1effce3e-88a5-47ca-818f-8add302c49b9)
 |Module|Pin 1|Pin 2|Pin 3|Pin 4|Pin 5|Pin 6| Pin 7|
 |--------|--------|--------|--------|--------|--------|--------|--------|
 |**📺 Display**|VCC→3V3|GND→GND|SCL→G22|SDA→G21|-|-|-|
@@ -98,7 +98,7 @@ By using the firmware, you must comply with the laws of your region. The firmwar
 | Jumper Wires | [AliExpress](https://aliexpress.ru/item/1005007553381854.html) |
 
 ### 🔌 Connection Scheme
-![Scheme](https://github.com/user-attachments/assets/cda54f27-3c40-4c8f-980a-df7c30e4257f)
+![Scheme](https://github.com/user-attachments/assets/1effce3e-88a5-47ca-818f-8add302c49b9)
 |Module|Pin 1|Pin 2|Pin 3|Pin 4|Pin 5|Pin 6| Pin 7|
 |--------|--------|--------|--------|--------|--------|--------|--------|
 |**📺 Display**|VCC→3V3|GND→GND|SCL→G22|SDA→G21|-|-|-|

@@ -53,6 +53,8 @@ ESP-GRABER — универсальный инструмент для работ
 |**🔘 Buttons**|UP(K1)→G27|DOWN(K2)→G26|OK(K3)→G33|BACK(K4)→G32|-|-|-|
 |**📡 CC1101**|1→GND|2→3V3|3→G2|4→G5|5→G18|6→G23 |7→G19|
 
+Также прошейте устройство [esp-graber.bin](https://github.com/Teapot174/ESP-GRABER/releases/download/v1.1/esp-graber_v1.1.bin) по адресу 0x0 на сайте https://esp.huhn.me
+
 ### 📸 Финальный результат (YouTube)
 [![Watch the video](https://img.youtube.com/vi/qRX-z81Mjyg/maxresdefault.jpg)](https://www.youtube.com/watch?v=qRX-z81Mjyg)
 
@@ -104,6 +106,8 @@ By using the firmware, you must comply with the laws of your region. The firmwar
 |**📺 Display**|VCC→3V3|GND→GND|SCL→G22|SDA→G21|-|-|-|
 |**🔘 Buttons**|UP(K1)→G27|DOWN(K2)→G26|OK(K3)→G33|BACK(K4)→G32|-|-|-|
 |**📡 CC1101**|1→GND|2→3V3|3→G2|4→G5|5→G18|6→G23 |7→G19|
+
+Also, flash the device [esp-graber.bin](https://github.com/Teapot174/ESP-GRABER/releases/download/v1.1/esp-graber_v1.1.bin) at address 0x0 on the website https://esp.huhn.me
 
 ### 📸 Final Result (YouTube)
 [![Watch the video](https://img.youtube.com/vi/qRX-z81Mjyg/maxresdefault.jpg)](https://www.youtube.com/watch?v=qRX-z81Mjyg)

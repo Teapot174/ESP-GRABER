@@ -19,12 +19,12 @@ ESP-GRABER — универсальный инструмент для работ
 *Использование прошивки означает ваше полное согласие с этими условиями*  
 ## ⚡ Возможности
 ### 📶 **SubGHz | 315 • 433 • 868 • 915 МГц**  
-- 🔍 **Считывание сигналов**  
-- 🔄 **Повтор сигналов**  
-- 📊 **Анализатор частот**  
-- 🛰️ **Глушилка (НЕЛЕГАЛЬНО)**  
-- 💾 **Хранение сигналов (до 20 ключей)**  
-- 🚫 **Удаление сигналов**  
+- 🔍 **Signal Read**
+- 🔄 **Signal Send**
+- 📊 **Frequency Analyzer**
+- 🛰️ **Jammer (ILLEGAL)**
+- 💾 **Signal Storage (up to 20 keys)**
+- 🚫 **Signal Delete**
 
 ### 📡 Поддерживаемые модуляции
 - Princeton
@@ -71,8 +71,8 @@ By using the firmware, you must comply with the laws of your region. The firmwar
 
 ## ⚡ Features
 ### 📶 **SubGHz | 315 • 433 • 868 • 915 МГц** 
-- 🔍 **Signal Reader**
-- 🔄 **Signal Repeater**
+- 🔍 **Signal Read**
+- 🔄 **Signal Send**
 - 📊 **Frequency Analyzer**
 - 🛰️ **Jammer (ILLEGAL)**
 - 💾 **Signal Storage (up to 20 keys)**

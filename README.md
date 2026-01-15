@@ -10,7 +10,8 @@
 ## 🚀 О проекте ESP-GRABER
 ESP-GRABER — универсальный инструмент для работы с радиочастотами на базе ESP32.  
 Проект позволяет **считывать**, **повторять** и **сохранять** сигналы 315/433/868/915 МГц.  
-*Проект стабилен, но может дорабатываться для расширения функционала.*
+
+На данный момент проект не планирует никак обновляться. Сейчас я работаю над [ESP-HACK](https://github.com/Teapot174/ESP-HACK), там есть абсолютно все функции что есть здесь и работают они там еще лучше.
 
 ### ⚠️ Дисклеймер
 Данная прошивка разработана исключительно для исследовательских целей и тестирования оборудования. 
@@ -63,7 +64,8 @@ ESP-GRABER — универсальный инструмент для работ
 ## 🚀 About ESP-GRABER
 ESP-GRABER is a versatile tool for working with radio frequencies based on ESP32.  
 The project allows **reading**, **repeating**, and **saving** signals in the 315/433/868/915 MHz ranges.  
-*The project is stable but may be updated for additional features.*
+
+The project currently has no plans to be updated. I'm currently working on [ESP-HACK](https://github.com/Teapot174/ESP-HACK), which has absolutely all the features found here, and they work even better.
 
 ### ⚠️ Disclaimer
 This firmware is designed exclusively for research purposes and hardware testing. 

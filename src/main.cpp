@@ -326,7 +326,7 @@ void loop() {
       }
       if (btn_ok.isHolded() && validKeyReceived) {
         Serial.print(F("Attempting to save key: ID="));
-        for (byte i = 0; i < keyData1.codeLenth >> 3; i++) {
+        for (byte i = 0; i < (keyData1.codeLenth + 7) >> 3; i++) {
           Serial.print(keyData1.keyID[i], HEX);
         }
         Serial.println();
@@ -361,7 +361,7 @@ void loop() {
         }
         if (validKeyReceived && autoSave && (lastSavedKey != keyData1.keyID[0] || keyData1.keyID[0] == 0)) {
           Serial.print(F("Auto-saving key: ID="));
-          for (byte i = 0; i < keyData1.codeLenth >> 3; i++) {
+          for (byte i = 0; i < (keyData1.codeLenth + 7) >> 3; i++) {
             Serial.print(keyData1.keyID[i], HEX);
           }
           Serial.println();
@@ -505,6 +505,7 @@ void restoreReceiveMode() {
   ELECHOUSE_cc1101.setDeviation(0);
   ELECHOUSE_cc1101.setPA(12);
   ELECHOUSE_cc1101.SetRx();
+  pinMode(CC1101_GDO0, INPUT);
   rcswitch.disableReceive();
   rcswitch.enableReceive(CC1101_GDO0);
   recieved = false;
@@ -590,7 +591,7 @@ void read_raw(tpKeyData* kd) {
       strncpy(kd->preset, String(rcswitch.getReceivedProtocol()).c_str(), sizeof(kd->preset) - 1);
       kd->preset[sizeof(kd->preset) - 1] = '\0';
     } else {
-      if (transitions >= 129 && transitions <= 137) {
+      if (transitions >= 129 && transitions <= 132) {
         kd->type = kStarLine;
       } else if (transitions >= 133 && transitions <= 137) {
         kd->type = kKeeLoq;
@@ -714,7 +715,7 @@ void OLED_printKey(tpKeyData* kd, byte msgType, bool isSending) {
 
   // Информация ключа
   st = "";
-  for (byte i = 0; i < kd->codeLenth >> 3; i++) st += String(kd->keyID[i], HEX) + ":";
+  for (byte i = 0; i < (kd->codeLenth + 7) >> 3; i++) st += String(kd->keyID[i], HEX) + ":";
   st.remove(st.length() - 1);
   
   display.setCursor(0, 12);
@@ -760,7 +761,7 @@ byte indxKeyInROM(tpKeyData* kd) {
   for (byte j = 1; j <= EEPROM_key_count; j++) {
     eq = true;
     byte i = (kd->type == kKeeLoq || kd->type == kANmotors64) ? 4 : 0;
-    for (; i < kd->codeLenth >> 3; i++) {
+    for (; i < (kd->codeLenth + 7) >> 3; i++) {
       byte eepromByte = EEPROM.read(i + j * sizeof(tpKeyData) + 2);
       if (buf[i] != eepromByte) {
         eq = false;
@@ -865,7 +866,7 @@ void sendSynthKey(tpKeyData* kd) {
   Serial.print(F("Transmitting key, protocol: "));
   Serial.print(getTypeName(kd->type));
   Serial.print(F(", ID: "));
-  for (byte i = 0; i < kd->codeLenth >> 3; i++) {
+  for (byte i = 0; i < (kd->codeLenth + 7) >> 3; i++) {
     Serial.print(kd->keyID[i], HEX);
   }
   Serial.print(F(", Freq: "));
@@ -881,7 +882,7 @@ void sendSynthKey(tpKeyData* kd) {
 
   if (kd->type == kRcSwitch || kd->type == kPrinceton || kd->type == kCAME || kd->type == kNICE || kd->type == kHOLTEK) {
     uint64_t data = 0;
-    for (int i = 0; i < kd->bitLength / 8; i++) {
+    for (int i = 0; i < (kd->bitLength + 7) / 8; i++) {
       data |= ((uint64_t)kd->keyID[i] << (i * 8));
     }
     int protocol = atoi(kd->preset);

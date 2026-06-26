@@ -520,11 +520,11 @@ void OLED_printMenu(Adafruit_SSD1306 &display, byte menuIndex) {
   if (menuIndex == 0) {
     display.drawBitmap(5, 12, image_Scanning_bits, 123, 52, 1);
     display.setCursor(42, 4);
-    display.print("SubGHz-R");
+    display.print("Receive");
   } else if (menuIndex == 1) {
     display.drawBitmap(5, 12, image_Scanning_short_bits, 96, 52, 1);
     display.setCursor(42, 4);
-    display.print("SubGHz-T");
+    display.print("Transmit");
   } else if (menuIndex == 2) {
     display.drawBitmap(5, 12, image_DolphinSuccess_bits, 96, 52, 1);
     display.drawBitmap(71, 31, image_MHz_1_bits, 25, 11, 1);

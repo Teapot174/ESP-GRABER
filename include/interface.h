@@ -2,10 +2,16 @@
 #define INTERFACE_H
 
 #include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
+#include "config.h"
 
-#define SCREEN_WIDTH 128
-#define SCREEN_HEIGHT 64
+#ifdef USE_SH1106
+#include <Adafruit_SH110X.h>
+typedef Adafruit_SH1106G OLED_DisplayType;
+#else
+#include <Adafruit_SSD1306.h>
+typedef Adafruit_SSD1306 OLED_DisplayType;
+#endif
+
 
 // Dolphin_MHz
 static const unsigned char PROGMEM image_Dolphin_MHz_bits[] = {
@@ -497,7 +503,7 @@ static const unsigned char PROGMEM image_Dolphin_Send_bits[] = {
   0x10,0x40,0x00,0x00,0x00,0x00,0x00,0x00,0x00
 };
 
-void OLED_printLogo(Adafruit_SSD1306 &display) {
+void OLED_printLogo(OLED_DisplayType &display) {
   display.clearDisplay();
   display.setTextColor(1);
   display.setTextSize(2);
@@ -515,7 +521,7 @@ void OLED_printLogo(Adafruit_SSD1306 &display) {
   display.display();
 }
 
-void OLED_printMenu(Adafruit_SSD1306 &display, byte menuIndex) {
+void OLED_printMenu(OLED_DisplayType &display, byte menuIndex) {
   display.clearDisplay();
   if (menuIndex == 0) {
     display.drawBitmap(5, 12, image_Scanning_bits, 123, 52, 1);

@@ -1,7 +1,11 @@
 #include <Arduino.h>
 #include <EEPROM.h>
 #include <Adafruit_GFX.h>
+#ifdef USE_SH1106
+#include <Adafruit_SH110X.h>
+#else
 #include <Adafruit_SSD1306.h>
+#endif
 #include <ELECHOUSE_CC1101_SRC_DRV.h>
 #include <GyverButton.h>
 #include <RCSwitch.h>
@@ -9,10 +13,7 @@
 #include "interface.h"
 
 // OLED
-#define SCREEN_WIDTH 128
-#define SCREEN_HEIGHT 64
-#define OLED_RESET -1
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+OLED_DisplayType display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 // Кнопки
 GButton btn_up(BTN_UP, HIGH_PULL, NORM_OPEN);
@@ -131,10 +132,17 @@ void setup() {
 
   // Инициализация OLED
   Wire.begin(OLED_SDA, OLED_SCL);
-  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+#ifdef USE_SH1106
+  if (!display.begin(OLED_ADDR, true)) {
+    Serial.println(F("SH1106 allocation failed"));
+    for (;;);
+  }
+#else
+  if (!display.begin(SSD1306_SWITCHCAPVCC, OLED_ADDR)) {
     Serial.println(F("SSD1306 allocation failed"));
     for (;;);
   }
+#endif
   OLED_printLogo(display);
 
   // Инициализация CC1101

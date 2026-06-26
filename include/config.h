@@ -1,7 +1,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// Параметры экрана (OLED SSD1306 / SH1106)
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 #define OLED_RESET -1
@@ -10,7 +9,6 @@
 
 #if defined(BOARD_ESP32_C3_SUPERMINI)
 
-// Пины для ESP32-C3 SuperMini
 #define OLED_SCL 9
 #define OLED_SDA 8
 
@@ -27,7 +25,6 @@
 
 #elif defined(BOARD_ESP_HACK)
 
-// Пины для ESP-HACK (ESP32 38 pin)
 #define OLED_SCL 22
 #define OLED_SDA 21
 
@@ -44,7 +41,6 @@
 
 #else
 
-// Стандартная распиновка для ESP32 Dev Module (30 pin)
 #define OLED_SCL 22
 #define OLED_SDA 21
 
